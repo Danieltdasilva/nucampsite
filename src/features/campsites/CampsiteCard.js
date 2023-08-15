@@ -1,4 +1,5 @@
 import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
+import { PROMOTIONS } from '../../app/shared/PROMOTIONS';
 
 const CampsiteCard = ({ campsite }) => {
   const { image, name } = campsite;
