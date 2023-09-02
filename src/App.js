@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage';
 import ContactPage from './pages/ContactPage';
 import CampsiteDetailPage from './pages/CampsiteDetailPage';
 import AboutPage from './pages/AboutPage';
+import { fetchPartners } from './features/partners/partnersSlice';
 import './App.css';
 
 function App() {
@@ -17,8 +18,8 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchCampsites());
+    dispatch(fetchPartners());
   }, [dispatch]);
-
   return (
     <div className='App'>
       <Header />
