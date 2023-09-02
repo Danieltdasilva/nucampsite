@@ -11,7 +11,6 @@ const CommentForm = ({ campsiteId }) => {
 
   const dispatch = useDispatch();
 
-
   const handleSubmit = (values) => {
     const comment = {
       campsiteId: parseInt(campsiteId),
@@ -22,7 +21,6 @@ const CommentForm = ({ campsiteId }) => {
     };
     console.log(comment);
     dispatch(addComment(comment));
-    setModalOpen(false);
   }
   return (
     <>

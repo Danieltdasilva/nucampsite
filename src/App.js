@@ -1,3 +1,6 @@
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchCampsites } from './features/campsites/campsitesSlice';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import CampsitesDirectoryPage from './pages/CampsitesDirectoryPage';
@@ -7,18 +10,15 @@ import ContactPage from './pages/ContactPage';
 import CampsiteDetailPage from './pages/CampsiteDetailPage';
 import AboutPage from './pages/AboutPage';
 import './App.css';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchCampsites } from './features/campsites/campsitesSlice';
-
-const dispatch = useDispatch();
-
-useEffect(() => {
-  dispatch(fetchCampsites());
-}, [dispatch]);
-
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCampsites());
+  }, [dispatch]);
+
   return (
     <div className='App'>
       <Header />
